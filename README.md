@@ -1,7 +1,5 @@
 # Images-Collector
 1. Collect images form Google search and download to local path.
-2. Link to Download the [ImageCollectors.exe ](https://github.com/motim6026/Images-Collector/ImageCollectors.rar)
-
 
 # Prerequisites
 1.Google Chrome Version 84^. 
