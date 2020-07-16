@@ -1,6 +1,6 @@
 # Images-Collector
-Collect images form Google search and download to local path.
-You can download the .exe with the software already ready [here](https://github.com/motim6026/Images-Collector/ImageCollectors.rar)
+1. Collect images form Google search and download to local path.
+2. Link to Download the [ImageCollectors.exe ](https://github.com/motim6026/Images-Collector/ImageCollectors.rar)
 
 
 # Prerequisites
