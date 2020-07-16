@@ -1,10 +1,8 @@
 # Images-Collector
-Collect images form Google search and download to local path.
-
+1. Collect images form Google search and download to local path.
 
 # Prerequisites
 1.Google Chrome Version 84^. 
-
 
 # Instructions
 
