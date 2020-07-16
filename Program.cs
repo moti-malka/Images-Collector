@@ -102,18 +102,19 @@ namespace ImageCollector
                     {
                         driver.Navigate().GoToUrl($"{driver.Url}#imgrc={dataId}");
 
-                        
+                        try
+                        {
 
-                            try
-                            {
-                            
-                            var imgsExtand = driver.FindElement(By.CssSelector("img[class = 'n3VNCb']"));
 
-                            if (imgsExtand.GetAttribute("class") == "n3VNCb" && imgsExtand.GetAttribute("src").Contains("http"))
+                            var imgsExtand = driver.FindElements(By.CssSelector("img[class = 'n3VNCb']"));
+
+                            var img = imgsExtand[1];
+
+                                if (img.GetAttribute("class") == "n3VNCb" && img.GetAttribute("src").Contains("http"))
                                 {
-                                    string src = imgsExtand.GetAttribute("src");
+                                    string src = img.GetAttribute("src");
 
-                                    Console.WriteLine(imgsExtand.GetAttribute("src"));
+                                    Console.WriteLine(img.GetAttribute("src"));
                                     using (WebClient client = new WebClient())
                                     {
 
@@ -126,7 +127,7 @@ namespace ImageCollector
 
                                         int fCount = Directory.GetFiles(pathToSave, "*", SearchOption.AllDirectories).Length;
 
-                                        if(fCount >= imageToSave)
+                                        if (fCount >= imageToSave)
                                         {
                                             Console.ForegroundColor = ConsoleColor.Green;
 
@@ -143,11 +144,11 @@ namespace ImageCollector
 
                                     }
                                 }
-                                else if (imgsExtand.GetAttribute("class") == "n3VNCb" && !imgsExtand.GetAttribute("src").Contains("http"))
+                                else if (img.GetAttribute("class") == "n3VNCb" && !img.GetAttribute("src").Contains("http"))
                                 {
 
                                     pathToSave = Path.Combine(currentPath, searchText);
-                                    string base64 = imgsExtand.GetAttribute("src").Split(',')[1];
+                                    string base64 = img.GetAttribute("src").Split(',')[1];
                                     byte[] bytes = Convert.FromBase64String(base64);
                                     using (Image imageStream = Image.FromStream(new MemoryStream(bytes)))
                                     {
