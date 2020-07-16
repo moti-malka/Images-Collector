@@ -1,2 +1,2 @@
 # Images-Collector
-Collect images in Google search and download
+Collect images form Google search and download to local path.
